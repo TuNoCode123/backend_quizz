@@ -129,18 +129,66 @@ A RESTful API service built with Express.js and Sequelize for managing quizzes, 
 
 ### Authentication
 - `POST /api/v1/register` - Register new user
+```
+{
+    "email":"user5@gmail.com",
+    "password":"123456",
+    "name":"user"
+}
+```
 - `POST /api/v1/login` - User login
-
+```
+{
+    "email":"user5@gmail.com",
+    "password":"123456"
+}
+```
 ### Quiz Management
 - `GET /api/v1/quizzs` - Get all quizzes
 - `POST /api/v1/quizzs` - Create quiz
+```
+{
+    "userId":1,
+    "title":"TOIEC 2025",
+    "description":"Try Hard"
+}
+```
 - `PUT /api/v1/quizzs` - Update quiz
+```
+{
+        "quizId": 1,
+        "userId": 1,
+        "description": "Try Hard 111",
+        "title": "TOIEC 2025"
+}
+```
 - `DELETE /api/v1/quizzs` - Delete quiz
+```
+{
+    "quizzId":1,
+    "userId":2
+}
+```
 - `GET /api/v1/quizzs/:id` - Get quiz details
+```
+get via param example: http://localhost:8888/api/v1/quizzs/1
+```
 - `POST /api/v1/submit-quizz` - Submit quiz answers
-
+```
+{
+    "userId":1,
+    "quizzId":1,
+    "answers":[{
+        "questionId":1,
+        "optionId":7
+    }
+    ]
+}
+```
 ### Question Management
 - `POST /api/v1/questions` - Create question
+```
+```
 - `PUT /api/v1/questions` - Update question
 - `DELETE /api/v1/questions/:id` - Delete question
 
